@@ -11,7 +11,10 @@ class MongoConnect():
 
     def save(self, json):
         try:
-            self.aluno.insert_one(json)
+            retorno= self.aluno.insert_one(json)
+            volta=self.aluno.find_one({"_id": retorno.inserted_id})
+            return volta
+
         except Exception as e:
             print("problema ao salvar registro")
             print(json)

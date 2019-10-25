@@ -18,8 +18,11 @@ def get():
 @app.route("/minhaaplicacao", methods=['POST'])#cadastra
 def post():
     data = request.json
-    aluno.save(data)
-    return jsonify(data)
+    result = aluno.save(data)
+    disc_retorno={"id":str(result["_id"]), "nome": result["nome"],
+                  "sobrenome": result["sobrenome"],
+                  "curso":result["curso"] }
+    return jsonify(disc_retorno)
 
 @app.route("/minhaaplicacao/<int:id>", methods=['PUT'])#atualisa
 def put(id):
