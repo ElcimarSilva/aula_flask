@@ -14,9 +14,9 @@ class Aluno():
         return self.conexao.save(json)
 
 
-    def att(self,id,json):
+    def att(self,nome,json):
         # aluno = {'nome': nome, 'sobrenome': sobrenome, 'curso': curso}
-        self.conexao.att({"_id": id}, {"$set": json})
+        self.conexao.att({"nome": nome}, {"$set": json})
 
     def deleta(self, find):
         self.conexao.deleta({"_id": find})

@@ -24,11 +24,12 @@ def post():
                   "curso":result["curso"] }
     return jsonify(disc_retorno)
 
-@app.route("/minhaaplicacao/<int:id>", methods=['PUT'])#atualisa
-def put(id):
+@app.route("/minhaaplicacao/<nome>", methods=['PUT'])#atualisa
+def put(nome):
     data = request.json
+    aluno.att(nome,data)
 
-    return jsonify(data)
+    return "att com sucesso"
 
 @app.route("/minhaaplicacao/<int:id>", methods=['DELETE'])#deleta
 def delete(id):
