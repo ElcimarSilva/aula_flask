@@ -31,10 +31,11 @@ def put(nome):
 
     return "att com sucesso"
 
-@app.route("/minhaaplicacao/<int:id>", methods=['DELETE'])#deleta
-def delete(id):
-    self.conexao.deleta({"id": id})
-    print(id)
+@app.route("/minhaaplicacao/<nome>", methods=['DELETE'])#deleta
+def delete(nome):
+    aluno.deleta(({"nome": nome}))
+    return "deletado"
+
 
 
 if __name__ == '__main__':

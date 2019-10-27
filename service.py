@@ -18,8 +18,8 @@ class Aluno():
         # aluno = {'nome': nome, 'sobrenome': sobrenome, 'curso': curso}
         self.conexao.att({"nome": nome}, {"$set": json})
 
-    def deleta(self, find):
-        self.conexao.deleta({"_id": find})
+    def deleta(self, nome):
+        self.conexao.deleta({"nome": nome})
 
     def ler(self, acha):
         self.conexao.ler({"nome":acha},{"_id":0})
