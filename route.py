@@ -11,9 +11,11 @@ app = Flask(__name__)
 def index():
     return "isso é um printII!"
 
-@app.route("/minhaaplicacao", methods=['GET'])#lsitar
-def get():
-    return "teste"
+@app.route("/minhaaplicacao/<nome>", methods=['GET'])#lsitar
+def get(nome):
+    aluno.ler(nome)
+    return 'aa'
+    # return aluno.pessoa
 
 @app.route("/minhaaplicacao", methods=['POST'])#cadastra
 def post():
@@ -33,7 +35,7 @@ def put(nome):
 
 @app.route("/minhaaplicacao/<nome>", methods=['DELETE'])#deleta
 def delete(nome):
-    aluno.deleta(({"nome": nome}))
+    aluno.deleta(nome)
     return "deletado"
 
 

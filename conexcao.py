@@ -2,6 +2,7 @@ from pymongo import MongoClient
 #pip install pymongo
 
 class MongoConnect():
+    pessoa = None
 
     def __init__(self):
         self.cliente = MongoClient('localhost', 27017)
@@ -23,6 +24,7 @@ class MongoConnect():
 
     def ler (self, query=None, projection=None):
         for pessoa in self.aluno.find(query, projection):
+            # return pessoa
             print(pessoa)
 
 
@@ -36,7 +38,7 @@ class MongoConnect():
             print(e)
 
 
-    def deleta(self, query):
+    def deleta(self,query):
         try:
             self.aluno.remove(query)
         except Exception as e:

@@ -4,7 +4,8 @@ from conexcao import MongoConnect
 
 class Aluno():
 
-    conexao = None
+    conexao= None
+    # pessoa = None
 
     def __init__(self):
         self.conexao = MongoConnect()
@@ -21,6 +22,9 @@ class Aluno():
     def deleta(self, nome):
         self.conexao.deleta({"nome": nome})
 
+
     def ler(self, acha):
-        self.conexao.ler({"nome":acha},{"_id":0})
+         self.conexao.ler({"nome":acha},{"_id":0})
+
+         # return self.conexao.pessoa
 
