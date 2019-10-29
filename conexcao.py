@@ -24,8 +24,8 @@ class MongoConnect():
 
     def ler (self, query=None, projection=None):
         for pessoa in self.aluno.find(query, projection):
-            # return pessoa
-            print(pessoa)
+            return pessoa
+            # print(pessoa)
 
 
     def att(self, query,field):

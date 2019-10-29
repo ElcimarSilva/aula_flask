@@ -13,8 +13,8 @@ def index():
 
 @app.route("/minhaaplicacao/<nome>", methods=['GET'])#lsitar
 def get(nome):
-    aluno.ler(nome)
-    return 'aa'
+    volta=aluno.ler(nome)
+    return volta
     # return aluno.pessoa
 
 @app.route("/minhaaplicacao", methods=['POST'])#cadastra

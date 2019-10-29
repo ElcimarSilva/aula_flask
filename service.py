@@ -24,7 +24,8 @@ class Aluno():
 
 
     def ler(self, acha):
-         self.conexao.ler({"nome":acha},{"_id":0})
+         volta_ler=self.conexao.ler({"nome":acha},{"_id":0})
+         return volta_ler
 
          # return self.conexao.pessoa
 
